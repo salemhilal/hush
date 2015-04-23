@@ -1,0 +1,56 @@
+<!doctype html>
+<html ng-app="hush" class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/6.0.2/basscss.min.css" rel="stylesheet">
+        <!-- link rel="stylesheet" href="css/main.css"-->
+        <style>
+            .large-header {
+                font-size: 15vh;
+            }
+
+            .sub-header {
+                font-size: 4vh;
+            }
+
+            .app {
+            }
+        </style>
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+    
+        <div class="caps m2 clearfix">
+            <span>Search </span>
+            <span class="right">What is this?</span>
+        </div>
+        <hr class="mt2">
+        <div class="container" ng-controller="hushController">
+            <div class="clearfix">
+                <header class="mt4 mb4">
+                    <h1 class="large-header h1 h1-responsive caps m0 ml9 center">HUSH</h1>
+                    <p class="h4 m0 bold caps center sub-header">Quiet your phone.</p>
+                </header>
+            </div>
+            <div class="clearfix">
+                <div ng-repeat="app in apps" class="sm-col sm-col-6 md-col-4 lg-col-3 px3 mb4">
+                    <img class="rounded app" ng-src="{{app.imgUrl}}">
+                </div>
+            </div>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/angular.min.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
