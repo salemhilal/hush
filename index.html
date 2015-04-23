@@ -10,15 +10,26 @@
         <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/6.0.2/basscss.min.css" rel="stylesheet">
         <!-- link rel="stylesheet" href="css/main.css"-->
         <style>
+            .hush-container {
+                max-width: 1024px;
+                margin: 0 auto;
+            }
             .large-header {
-                font-size: 15vh;
+                font-size: 12vh;
             }
 
             .sub-header {
                 font-size: 4vh;
             }
 
-            .app {
+            .app, .app:hover {
+                -webkit-transition: margin-top 0.1s, margin-bottom 0.1s;
+                transition: margin-top 0.1s, margin-bottom 0.1s;
+            }
+
+            .app:hover {
+                margin-top: -10px;
+                margin-bottom: 10px;
             }
         </style>
 
@@ -27,11 +38,11 @@
     <body>
     
         <div class="caps m2 clearfix">
-            <span>Search </span>
+            <!--span>Search </span-->
             <span class="right">What is this?</span>
         </div>
-        <hr class="mt2">
-        <div class="container" ng-controller="hushController">
+        <!--hr class="mt2"-->
+        <div class="hush-container mt4" ng-controller="hushController">
             <div class="clearfix">
                 <header class="mt4 mb4">
                     <h1 class="large-header h1 h1-responsive caps m0 ml9 center">HUSH</h1>
@@ -39,7 +50,7 @@
                 </header>
             </div>
             <div class="clearfix">
-                <div ng-repeat="app in apps" class="sm-col sm-col-6 md-col-4 lg-col-3 px3 mb4">
+                <div ng-repeat="app in apps" class="sm-col sm-col-4 md-col-3 lg-col-2 px3 mb4">
                     <img class="rounded app" ng-src="{{app.imgUrl}}">
                 </div>
             </div>
