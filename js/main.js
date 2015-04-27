@@ -1,6 +1,6 @@
 (function() {
     var app = angular.module('hush', []);
-    $(document).ready(function () {
+    $(window).load(function () {
         $('.apps-container').fadeIn();
     });
 
