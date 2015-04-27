@@ -22,6 +22,9 @@
             font-size: 4vh;
         }
 
+        .app {
+            position: relative;
+        }
         .app-img, .app-img:hover {
             -webkit-transition: margin-top 0.1s, margin-bottom 0.1s;
             transition: margin-top 0.1s, margin-bottom 0.1s;
@@ -63,6 +66,21 @@
             right: 0;
             margin-right: 15px;
         }
+        .notif-badge {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 33px;
+            height: 33px;
+            margin: -10px 16px 0px 0px;
+            border-radius: 50%;
+            background-color: red;
+            display: block;
+            text-align: center;
+            color: white;
+            font-size: 1.4em;
+            border: 2px solid white;
+        }
     </style>
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -83,6 +101,7 @@
         </div>
         <div class="clearfix">
             <div ng-repeat="app in apps" class="app sm-col sm-col-4 md-col-3 lg-col-2 px3 mb4" ng-click="showModal(app)">
+                <div class="notif-badge" ng-show="app.issues.length">{{app.issues.length}}</div>
                 <img class="rounded app-img" ng-src="{{app.imgUrl}}">
             </div>
         </div>
