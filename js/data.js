@@ -32,7 +32,7 @@
             name: 'Words with Friends',
             imgUrl: 'img/wordswithfriends.jpg',
             issues: ['Excessive notifications', 'Irrelevant notifications', 'Ad-like notifications'],
-            writeup: "Timehop is a utility app, but it sends daily notifications to check the timehop they’ve created. It’s not important to be notified about this, so we recommend turning notifications off in the general settings.",
+            writeup: "Like many games, Words With Friends sends notifications to encourage users to play the game. Since Words With Friends is a social app, it’s important to be notified when it’s your turn to make a move, but Words With Friends also sends notifications that aren’t relevant to the game, for example suggesting other people to play with, and other games users should check out. Therefore, we would recommend turning off as many of the notifications as possible.",
         },
         {
             name: 'Shazam',
