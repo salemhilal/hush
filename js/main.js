@@ -1,5 +1,8 @@
 (function() {
     var app = angular.module('hush', []);
+    $(document).ready(function () {
+        $('.apps-container').fadeIn();
+    });
 
     app.controller('hushController', function ($scope, $window) {
         console.log('Hush is running', $window.apps);
