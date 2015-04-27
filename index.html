@@ -1,67 +1,107 @@
 <!doctype html>
 <html ng-app="hush" class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/6.0.2/basscss.min.css" rel="stylesheet">
-        <!-- link rel="stylesheet" href="css/main.css"-->
-        <style>
-            .hush-container {
-                max-width: 1024px;
-                margin: 0 auto;
-            }
-            .large-header {
-                font-size: 12vh;
-            }
+    <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/6.0.2/basscss.min.css" rel="stylesheet">
+    <!-- link rel="stylesheet" href="css/main.css"-->
+    <style>
+        .hush-container {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+        .large-header {
+            font-size: 12vh;
+        }
 
-            .sub-header {
-                font-size: 4vh;
-            }
+        .sub-header {
+            font-size: 4vh;
+        }
 
-            .app, .app:hover {
-                -webkit-transition: margin-top 0.1s, margin-bottom 0.1s;
-                transition: margin-top 0.1s, margin-bottom 0.1s;
-            }
+        .app-img, .app-img:hover {
+            -webkit-transition: margin-top 0.1s, margin-bottom 0.1s;
+            transition: margin-top 0.1s, margin-bottom 0.1s;
+        }
 
-            .app:hover {
-                margin-top: -10px;
-                margin-bottom: 10px;
-            }
-        </style>
+        .app-img:hover {
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
 
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-    
-        <div class="caps m2 clearfix">
-            <!--span>Search </span-->
-            <span class="right">What is this?</span>
+        .overlay {
+            display: none;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.5);
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .freeze {
+            overflow: hidden;
+        }
+
+        .modal {
+            position: relative;
+            max-width: 640px;
+            padding: 20px;
+            background: #fff;
+            margin: 40px auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            width: 30px;
+            text-align: center;
+            font-size: 2em;
+            top: 0;
+            right: 0;
+            margin-right: 15px;
+        }
+    </style>
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body ng-controller="hushController">
+
+    <div class="caps m2 clearfix">
+        <!--span>Search </span-->
+        <span class="right">What is this?</span>
+    </div>
+    <!--hr class="mt2"-->
+    <div class="hush-container mt4">
+        <div class="clearfix">
+            <header class="mt4 mb4">
+                <h1 class="large-header h1 h1-responsive caps m0 ml9 center">HUSH</h1>
+                <p class="h4 m0 bold caps center sub-header">Quiet your phone.</p>
+            </header>
         </div>
-        <!--hr class="mt2"-->
-        <div class="hush-container mt4" ng-controller="hushController">
-            <div class="clearfix">
-                <header class="mt4 mb4">
-                    <h1 class="large-header h1 h1-responsive caps m0 ml9 center">HUSH</h1>
-                    <p class="h4 m0 bold caps center sub-header">Quiet your phone.</p>
-                </header>
-            </div>
-            <div class="clearfix">
-                <div ng-repeat="app in apps" class="sm-col sm-col-4 md-col-3 lg-col-2 px3 mb4">
-                    <img class="rounded app" ng-src="{{app.imgUrl}}">
-                </div>
+        <div class="clearfix">
+            <div ng-repeat="app in apps" class="app sm-col sm-col-4 md-col-3 lg-col-2 px3 mb4" ng-click="showModal(app)">
+                <img class="rounded app-img" ng-src="{{app.imgUrl}}">
             </div>
         </div>
+    </div>
+    <div class="overlay" ng-click="hideModal()">
+        <div class="modal">
+            <header>
+                <h1 class="h1 h1-responsive">{{modalApp.name}}</h1>
+                <div class="modal-close" ng-click="hideModal()">&times;</div>
+            </header>
+        </div>
+    </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-        <script src="js/vendor/jquery-1.11.2.min.js"></script>
-        <script src="js/vendor/angular.min.js"></script>
-        <script src="js/data.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
