@@ -1,5 +1,4 @@
 (function(window) {
-    console.log('data loading');
      window.apps = [
         {
             name: "Facebook",
@@ -151,7 +150,7 @@
             name: "2048",
             imgUrl: 'img/2048.jpg',
             issues: ['Ad-like notifications'],
-            writuep: "2048 is a game that sends ad-like reminders to play. We recommend turning off all notifications for this app in the general notifications settings menu."
+            writeup: "2048 is a game that sends ad-like reminders to play. We recommend turning off all notifications for this app in the general notifications settings menu."
         },
         {
             name: "Trivia Crack",
@@ -194,4 +193,3 @@
         }
     ];
 })(window);
-console.log('hi');

@@ -8,94 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/6.0.2/basscss.min.css" rel="stylesheet">
-    <!-- link rel="stylesheet" href="css/main.css"-->
-    <style>
-        .hush-container {
-            max-width: 1024px;
-            margin: 0 auto;
-        }
-
-        .apps-container {
-            display: none;
-        }
-
-        .large-header {
-            font-size: 12vh;
-        }
-
-        .sub-header {
-            font-size: 4vh;
-        }
-
-        .app {
-            position: relative;
-        }
-
-        .app-img {
-            box-sizing: border-box;
-            border-radius: 15px;
-        }
-
-        .app-img,
-        .app-img:hover {
-            -webkit-transition: margin-top 0.1s, margin-bottom 0.1s;
-            transition: margin-top 0.1s, margin-bottom 0.1s;
-        }
-
-        .app-img:hover {
-            margin-top: -10px;
-            margin-bottom: 10px;
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            background-color: rgba(0, 0, 0, 0.5);
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        .freeze {
-            overflow: hidden;
-        }
-
-        .modal {
-            position: relative;
-            max-width: 640px;
-            padding: 20px;
-            background: #fff;
-            margin: 40px auto;
-        }
-
-        .modal-close {
-            position: absolute;
-            width: 30px;
-            text-align: center;
-            font-size: 2em;
-            top: 0;
-            right: 0;
-            margin-right: 15px;
-        }
-        .notif-badge {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 33px;
-            height: 33px;
-            margin: -16px 16px 0px 0px;
-            border-radius: 50%;
-            background-color: red;
-            display: block;
-            text-align: center;
-            color: white;
-            font-size: 1.4em;
-            border: 2px solid white;
-        }
-    </style>
-
+    <link href="css/main.css" rel="stylesheet">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body ng-controller="hushController">
 
@@ -112,7 +27,7 @@
             </header>
         </div>
         <div class="apps-container clearfix">
-            <div ng-repeat="app in apps" class="app sm-col sm-col-4 md-col-3 lg-col-2 px3 mb4" ng-click="showModal(app)">
+            <div ng-repeat="app in apps | orderBy:'name'" class="app sm-col sm-col-4 md-col-3 lg-col-2 px3 mb4" ng-click="showModal(app)">
                 <div class="notif-badge" ng-show="app.issues.length">{{app.issues.length}}</div>
                 <img class="rounded app-img" ng-src="{{app.imgUrl}}" ng-class="{border: app.border}">
             </div>
@@ -120,18 +35,23 @@
     </div>
     <div class="overlay" ng-click="hideModal()">
         <div class="modal">
-            <header>
-                <h1 class="h1 h1-responsive">{{modalApp.name}}</h1>
-                <div class="modal-close" ng-click="hideModal()">&times;</div>
-            </header>
+            <img class="modal-img" ng-src={{modalApp.imgUrl}}>
+            <h1 class="h1 h1-responsive">{{modalApp.name}}</h1>
+            <div class="modal-close" ng-click="hideModal()">&times;</div>
+            <div class="modal-issues clearfix">
+                <span class="caps h6 bold bg-black p1 mr1 mb1 white" ng-repeat="issue in modalApp.issues">{{issue}}</span>
+            </div>
+            <div class="modal-body mt2 mb2">
+                <p class="h3">{{modalApp.writeup}}</p>
+            </div>
         </div>
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
     <script src="js/vendor/jquery-1.11.2.min.js"></script>
     <script src="js/vendor/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
 </body>
