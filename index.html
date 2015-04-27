@@ -16,7 +16,7 @@
 
     <div class="caps m2 clearfix">
         <!--span>Search </span-->
-        <span class="right">What is this?</span>
+        <span class="right button button-link bg-red" ng-click="whatIsThis()">What is this?</span>
     </div>
     <!--hr class="mt2"-->
     <div class="hush-container mt4">
@@ -33,16 +33,42 @@
             </div>
         </div>
     </div>
-    <div class="overlay" ng-click="hideModal()">
-        <div class="modal">
-            <img class="modal-img" ng-src={{modalApp.imgUrl}}>
+    <div class="overlay app-overlay" ng-click="hideModal()">
+        <div class="modal p3" ng-click="$event.stopPropagation()">
+            <img class="modal-img" ng-src="{{modalApp.imgUrl}}" ng-show="modalApp.imgUrl" ng-class="{border: modalApp.border}">
             <h1 class="h1 h1-responsive">{{modalApp.name}}</h1>
             <div class="modal-close" ng-click="hideModal()">&times;</div>
             <div class="modal-issues clearfix">
-                <span class="caps h6 bold bg-black p1 mr1 mb1 white" ng-repeat="issue in modalApp.issues">{{issue}}</span>
+                <span class="caps h6 bold bg-red p1 mr1 mb1 white" ng-repeat="issue in modalApp.issues">{{issue}}</span>
             </div>
             <div class="modal-body mt2 mb2">
                 <p class="h3">{{modalApp.writeup}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="overlay whatis-overlay" ng-click="hideModal()">
+        <div class="modal p3" ng-click="$event.stopPropagation()">
+            <h1 class="h1 h1-responsive caps center bold mt3 mb3">This is hush.</h1>
+            <div class="modal-close" ng-click="hideModal()">&times;</div>
+            <div class="modal-body mt2 mb2">
+                <p class="h3 mb3">
+                    Notifications are disruptive by nature. They keep you from what you're working on, or interrupt you in social settings.
+                </p>
+                <p class="h3 mb3">
+                    Not all notifications are bad, like event reminders and messages from friends. It can be hard to weed out what
+                    notifications are genuinely useful.
+                </p>
+                <p class="h3 mb3">
+                    Hush is a guide to help make sense of your phone's notifications. We've collected a list of apps that we've found
+                    notoriously intrusive, and have developed guides to help cut out the unnecessary bits.
+                </p>
+                <p class="h3 mb3">
+                    Every app has a badge indicating how many issues we've found with it. Click on the app for a brief writeup 
+                    describing how to keep the app quiet.
+                </p>
+                <p class="h3 mb3">
+                    If you have any questions, <a href="mailto:salemhilal@gmail.com">feel free to say hi</a>.
+                </p>
             </div>
         </div>
     </div>

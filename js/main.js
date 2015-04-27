@@ -25,15 +25,18 @@
             }
             console.log('incrementing views for', app.name, 'to', $scope.viewCount[app.name]);
             $scope.modalApp = app;
-            $('body').addClass('freeze');
-            $('.overlay').fadeIn();
+            $('.app-overlay').fadeIn();
             $('.modal').animate({marginTop: '60px'});
         };
 
         $scope.hideModal = function() {
             $('.overlay').fadeOut();
             $('.modal').animate({marginTop: '30px'});
-            $('body').removeClass('freeze');
+        };
+
+        $scope.whatIsThis = function() {
+            $('.whatis-overlay').fadeIn();
+            $('.modal').animate({marginTop: '60px'});
         };
     });
 
