@@ -22,22 +22,18 @@ body {
 
 .app {
     position: relative;
+    transition: transform 0.1s;
+    -webkit-transition: transform 0.1s;
+}
+
+.app:hover {
+    transform: translate(0, -15px);
+    -webkit-transform: translate(0, -15px);
 }
 
 .app-img {
     box-sizing: border-box;
     border-radius: 15px;
-}
-
-.app-img,
-.app-img:hover {
-    -webkit-transition: margin-top 0.1s, margin-bottom 0.1s;
-    transition: margin-top 0.1s, margin-bottom 0.1s;
-}
-
-.app-img:hover {
-    margin-top: -10px;
-    margin-bottom: 10px;
 }
 
 .overlay {
@@ -65,6 +61,7 @@ body {
     max-width: 640px;
     background: #fff;
     margin: 40px auto;
+    border-radius: 3px;
 }
 
 .modal-close {
@@ -103,7 +100,7 @@ body {
 .modal-img {
     margin-top: 30px;
     max-width: 300px;
-    width: 60%;
+    width: 40%;
     margin: 30px auto 0;
     display: block;
     border-radius: 10%;
