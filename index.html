@@ -27,9 +27,10 @@
             </header>
         </div>
         <div class="apps-container clearfix">
-            <div ng-repeat="app in apps | orderBy:'name'" class="app col-4 col sm-col-4 md-col-3 lg-col-2 px3 mb4" ng-click="showModal(app)">
+            <div ng-repeat="app in apps | orderBy:'name'" class="app col-4 col sm-col-4 md-col-3 lg-col-2 px3 mb3" ng-click="showModal(app)">
                 <div class="notif-badge" ng-show="app.issues.length">{{app.issues.length}}</div>
                 <img class="rounded app-img" ng-src="{{app.imgUrl}}" ng-class="{border: app.border}">
+                <div class="app-name mt1">{{app.name}}</div>
             </div>
         </div>
     </div>

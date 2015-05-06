@@ -36,6 +36,15 @@ body {
     border-radius: 15px;
 }
 
+.app-name {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 1.5em;
+    font-size: 1em;
+}
+
 .overlay {
     display: none;
     position: fixed;

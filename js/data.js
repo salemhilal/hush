@@ -134,7 +134,7 @@
             writeup: "Many people find the number of notifications sent by the default messages application to be excessive. Although the notifications can not be turned off entirely, conversations can be “snoozed” for certain amounts of time, which can give you some control over the notifications."
         },*/
         {
-            name: "Facebook Messenger",
+            name: "Messenger",
             imgUrl: "img/facebookmessenger.jpg",
             issues: ['Excessive notifications'],
             writeup: "Many people find the number of notifications sent by Facebook Messenger application to be excessive. Notifications for Facebook Messenger can be “muted” for certain lengths of time, which can give some control over the number of notifications sent.",
