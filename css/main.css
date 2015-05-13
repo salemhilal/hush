@@ -4,7 +4,7 @@ body {
 
 
 .hush-container {
-    max-width: 1024px;
+    max-width: 690px;
     margin: 0 auto;
 }
 
@@ -33,7 +33,7 @@ body {
 
 .app-img {
     box-sizing: border-box;
-    border-radius: 15px;
+    border-radius: 18%;
 }
 
 .app-name {
@@ -115,3 +115,16 @@ body {
     border-radius: 10%;
 }
 
+@media (max-width: 599px) {
+    .app {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+
+@media (min-width: 600px) {
+    .app {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}

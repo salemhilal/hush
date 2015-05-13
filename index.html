@@ -22,14 +22,14 @@
     <div class="hush-container mt4">
         <div class="clearfix">
             <header class="mt4 mb4">
-                <h1 class="large-header h1 h1-responsive caps m0 ml9 center">HUSH</h1>
+                <h1 class="large-header h1 h1-responsive caps m0 center">HUSH</h1>
                 <p class="h4 m0 bold caps center sub-header">Quiet your phone.</p>
             </header>
         </div>
         <div class="apps-container clearfix">
-            <div ng-repeat="app in apps | orderBy:'name'" class="app col-4 col sm-col-4 md-col-3 lg-col-2 px3 mb3" ng-click="showModal(app)">
+            <div ng-repeat="app in apps | orderBy:'name'" class="app col-3 col mb3" ng-click="showModal(app)">
                 <div class="notif-badge" ng-show="app.issues.length">{{app.issues.length}}</div>
-                <img class="rounded app-img" ng-src="{{app.imgUrl}}" ng-class="{border: app.border}">
+                <img class="app-img" ng-src="{{app.imgUrl}}" ng-class="{border: app.border}">
                 <div class="app-name mt1">{{app.name}}</div>
             </div>
         </div>
